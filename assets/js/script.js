@@ -8,6 +8,7 @@ $(document).ready(function(){
     var lat;
     var lon;
     var savedWeatherElement = document.querySelector('.search-hist')
+    var forecastInfo = $("#forecast")
 
         
     
@@ -73,7 +74,7 @@ $(document).ready(function(){
     };
     
     var formSubmitHandler = function(event) {
-        // forecastInfo.textContent = "";
+        forecastInfo.textContent = "";
 
         event.preventDefault();
         var cityName = cityInputEl.value.trim();
@@ -168,7 +169,6 @@ $(document).ready(function(){
     
     var getForecast = function(city){  
         // make a request to the url
-
         fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=ceb07fd28e874e56f65ba9fc8499c396")
         .then(function(response) {
             response.json() 
@@ -176,7 +176,6 @@ $(document).ready(function(){
                 for (i = 0; i < data.list.length; i++) {
                     if (data.list[i].dt_txt.indexOf("15:00:00") !== -1){
                         //create cards for weather info
-                        var forecastInfo = $("#forecast")
                         var dailyCol = $("<div>").addClass("col-md-2")
                         var dailyCard = $("<div>").addClass("card")
                         var cardBody = $("<div>").addClass("card-body")
@@ -225,9 +224,6 @@ var displayHistory = function(cityName){
         })
     }
 }
-
-  
-
     
     weatherFormEl.addEventListener("submit", formSubmitHandler);
     displayHistory();
