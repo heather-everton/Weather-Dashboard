@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
   <title>Weather Dashboard</title>
@@ -29,15 +30,20 @@
               <input name="city" id="city" type="text" autofocus="true" class="form-input" />
               <button type="submit" class="btn">Get Weather</button>
             </form>
+            <ul id="search-history" class="search-hist">
+            </ul>
         </div>
-        <div class="col-8">
+        <div class="col-9">
             <h2 class="subtitle">Showing Weather for: <span id="zip-search-term"></span></h2>
-            <div id="weather-container" class="list-group"></div>    
+            <div id="weather-container" class="list-group"></div>
+            <h4 class = "forecast">5-day Forecast:</h4>
+            <div class = "row" id="forecast"></div>    
         </div>
     </div>
 
   </main>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 
