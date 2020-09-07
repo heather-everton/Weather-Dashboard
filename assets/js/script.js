@@ -14,7 +14,7 @@ $(document).ready(function(){
     
     var getWeatherInfo = function(city) {
         // format the github api url
-        var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=ceb07fd28e874e56f65ba9fc8499c396";
+        var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=ceb07fd28e874e56f65ba9fc8499c396";
       
         // make a request to the url
         fetch(apiUrl)
@@ -29,7 +29,7 @@ $(document).ready(function(){
                         var lat = data.coord.lat 
                         var lon = data.coord.lon
                         return fetch(
-                            "http://api.openweathermap.org/data/2.5/uvi?appid=ceb07fd28e874e56f65ba9fc8499c396&lat=" + lat + "&lon=" + lon 
+                            "https://api.openweathermap.org/data/2.5/uvi?appid=ceb07fd28e874e56f65ba9fc8499c396&lat=" + lat + "&lon=" + lon 
                         )
                     })
     
@@ -169,7 +169,7 @@ $(document).ready(function(){
     
     var getForecast = function(city){  
         // make a request to the url
-        fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=ceb07fd28e874e56f65ba9fc8499c396")
+        fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=ceb07fd28e874e56f65ba9fc8499c396")
         .then(function(response) {
             response.json() 
             .then(function(data) {
